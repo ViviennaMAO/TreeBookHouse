@@ -1,0 +1,9 @@
+{
+  "name": "treebookhouse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TreeBookHouse - Luffa SuperBox aggregator hub for interactive finance books",
+  "dependencies": {
+    "@luffalab/luffa-evm-sdk": "latest"
+  }
+}

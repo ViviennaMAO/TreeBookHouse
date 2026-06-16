@@ -1,0 +1,113 @@
+<view class="page">
+
+  <view class="ribbon">
+    <view class="ribbon-tag">EARLY BIRD · LIFETIME</view>
+    <view class="ribbon-line"></view>
+  </view>
+
+  <view class="hero-title serif">早鸟终身全集</view>
+  <view class="hero-sub muted">All-Access · Forever</view>
+
+  <view class="price-card">
+    <view class="price-main">
+      <text class="price-num serif">19.9</text>
+      <text class="price-unit">USDT</text>
+    </view>
+    <view class="price-strike dim">
+      早鸟之后 <text class="strike">29.9</text> · 单本累加 <text class="strike">39.6</text>
+    </view>
+  </view>
+
+  <view class="benefit-list">
+    <view class="benefit">
+      <view class="check serif">✓</view>
+      <view class="benefit-text">
+        <view class="benefit-title">当前 4 本付费互动书,终身解锁</view>
+        <view class="benefit-desc dim">金融周期 · 大类资产研究 · 波动率交易 · 期权入门学与练</view>
+      </view>
+    </view>
+
+    <view class="benefit">
+      <view class="check serif">✓</view>
+      <view class="benefit-text">
+        <view class="benefit-title">未来新书自动解锁,无需补差价</view>
+        <view class="benefit-desc dim">一次付费 · 终身续命 · 不再为每本新书做决策</view>
+      </view>
+    </view>
+
+    <view class="benefit">
+      <view class="check serif">✓</view>
+      <view class="benefit-text">
+        <view class="benefit-title">《货币金融学》免费开放</view>
+        <view class="benefit-desc dim">不需要套餐也能读 —— 一本入门必读的"互动教材"</view>
+      </view>
+    </view>
+
+    <view class="benefit">
+      <view class="check serif">✓</view>
+      <view class="benefit-text">
+        <view class="benefit-title">BNB Chain USDT 链上验证</view>
+        <view class="benefit-desc dim">支付完成立即激活 · 链上 hash 可追溯</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="vs-line">
+    <view class="vs-cell">
+      <view class="vs-label dim">单本累加</view>
+      <view class="vs-val serif">39.6 USDT</view>
+    </view>
+    <view class="vs-arrow dim">→</view>
+    <view class="vs-cell">
+      <view class="vs-label dim">早鸟套餐</view>
+      <view class="vs-val serif accent">19.9 USDT</view>
+    </view>
+  </view>
+  <view class="save-tag">省下 19.7 USDT · 约 50% 折扣</view>
+
+  <view wx:if="{{owned}}" class="owned-card">
+    <view class="owned-title serif">✓ 已激活终身套餐</view>
+    <view class="owned-desc dim">可在「书架」中阅读任意一本互动书</view>
+    <button class="btn-ink" bindtap="goShelf">回到书架</button>
+  </view>
+
+  <view wx:else class="cta-stack">
+    <button class="btn-ink" bindtap="purchase" loading="{{purchasing}}">
+      {{purchasing ? '处理中…' : '立刻解锁 · 19.9 USDT →'}}
+    </button>
+    <view class="cta-hint dim">
+      点击后会唤起 Luffa 钱包 · 在 BNB Chain 上发送 USDT
+    </view>
+  </view>
+
+  <view wx:if="{{error}}" class="error-box">
+    <view class="error-title">出错了</view>
+    <view class="error-msg mono">{{error}}</view>
+  </view>
+
+  <view wx:if="{{lastTx}}" class="tx-box">
+    <view class="tx-title">解锁成功 · 终身激活</view>
+    <view class="tx-hash mono dim">{{lastTx}}</view>
+  </view>
+
+  <view class="hairline" style="margin: 60rpx 0 28rpx;"></view>
+  <view class="disclosure">
+    <view class="disclosure-title serif">支付详情</view>
+    <view class="disclosure-row">
+      <text class="dim">链 · </text>
+      <text>BNB Chain (Mainnet, chain ID 56)</text>
+    </view>
+    <view class="disclosure-row">
+      <text class="dim">代币 · </text>
+      <text>USDT (BEP20)</text>
+    </view>
+    <view class="disclosure-row">
+      <text class="dim">收款地址 · </text>
+      <text class="mono receiver">{{receiverShort}}</text>
+    </view>
+  </view>
+
+  <view class="footer-note dim">
+    一次付费 · 终身可读 · Powered by Luffa SuperBox
+  </view>
+</view>

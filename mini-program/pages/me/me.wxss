@@ -1,0 +1,230 @@
+.profile-head {
+  padding: 20rpx 0 40rpx;
+}
+.profile-title {
+  font-size: 60rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+.profile-sub {
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
+
+.wallet-card {
+  background: #F9FAFB;
+  border-radius: 28rpx;
+  padding: 36rpx;
+  margin-bottom: 32rpx;
+}
+.wallet-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.wallet-label {
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+}
+.wallet-addr {
+  font-size: 26rpx;
+  font-weight: 500;
+  letter-spacing: 0.5rpx;
+  color: #6B7280;
+}
+
+.identity-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+.identity-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #E5E7EB;
+  flex-shrink: 0;
+}
+.identity-avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0F1B3B;
+  color: #FFFFFF;
+  font-size: 36rpx;
+  font-weight: 600;
+  border: none;
+}
+.identity-text {
+  flex: 1;
+  min-width: 0;
+}
+.identity-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #0F1B3B;
+  margin-bottom: 4rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wallet-tip {
+  font-size: 26rpx;
+  color: #1F2937;
+  margin: 12rpx 0 28rpx;
+  line-height: 1.6;
+}
+
+.wallet-stats {
+  display: flex;
+  align-items: center;
+  padding-top: 24rpx;
+  border-top: 1rpx solid #E5E7EB;
+}
+.stat-cell {
+  flex: 1;
+  text-align: center;
+}
+.stat-num {
+  font-size: 44rpx;
+  font-weight: 600;
+}
+.stat-label {
+  font-size: 20rpx;
+  letter-spacing: 2rpx;
+  margin-top: 4rpx;
+}
+.stat-divider {
+  width: 1rpx;
+  height: 56rpx;
+  background: #E5E7EB;
+}
+
+/* Bundle prompt */
+.bundle-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0F1B3B;
+  border-radius: 24rpx;
+  padding: 30rpx 32rpx;
+  margin-bottom: 50rpx;
+  color: #FFFFFF;
+}
+.bundle-prompt-text { flex: 1; }
+.prompt-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 4rpx;
+  color: #FFFFFF;
+}
+.prompt-desc {
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
+  color: rgba(255,255,255,0.6);
+}
+.prompt-arrow {
+  font-size: 36rpx;
+  color: rgba(255,255,255,0.6);
+  margin-left: 20rpx;
+}
+
+/* Section head */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  margin: 20rpx 0 24rpx;
+}
+.section-title {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+/* My shelf */
+.my-shelf {
+  margin-bottom: 40rpx;
+}
+.my-row {
+  display: flex;
+  padding: 24rpx 4rpx;
+  border-bottom: 1rpx solid #F1F2F4;
+  align-items: stretch;
+}
+.my-row:last-child { border-bottom: none; }
+.my-spine {
+  width: 6rpx;
+  border-radius: 4rpx;
+  margin-right: 24rpx;
+  min-height: 80rpx;
+}
+.my-body { flex: 1; }
+.my-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6rpx;
+}
+.my-title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.my-meta {
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
+}
+
+/* History */
+.history { margin-bottom: 40rpx; }
+.hist-row {
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #F1F2F4;
+}
+.hist-row:last-child { border-bottom: none; }
+.hist-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6rpx;
+}
+.hist-type {
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.hist-amount {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.hist-bot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20rpx;
+  letter-spacing: 1rpx;
+}
+
+/* About */
+.about { margin-bottom: 40rpx; }
+.about-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #F1F2F4;
+  font-size: 26rpx;
+}
+.about-row:last-child { border-bottom: none; }
+.receiver-mono { font-size: 22rpx; }
+.link-arrow {
+  font-size: 24rpx;
+  color: #0F1B3B;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 20rpx;
+  letter-spacing: 1rpx;
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+}

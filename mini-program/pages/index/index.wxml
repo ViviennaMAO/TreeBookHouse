@@ -1,0 +1,81 @@
+<view class="page">
+
+  <view class="hero">
+    <view class="brand-mark">
+      <view class="mark-spine" style="background:#0F1B3B"></view>
+      <view class="mark-spine" style="background:#C9956A"></view>
+      <view class="mark-spine" style="background:#2D5A45"></view>
+      <view class="mark-spine" style="background:#9F4B5B"></view>
+      <view class="mark-spine" style="background:#A88333"></view>
+    </view>
+    <view class="hero-title serif">TreeBookHouse</view>
+    <view class="hero-sub muted">互动金融书房 · 让每本书都可以"玩"</view>
+  </view>
+
+  <view
+    wx:if="{{walletReady && !walletConnected}}"
+    class="auth-banner"
+    bindtap="onReconnect"
+  >
+    <view class="auth-text">
+      <view class="auth-title">钱包尚未授权</view>
+      <view class="auth-desc dim">点此重新连接 Luffa 钱包 · 用于解锁互动书</view>
+    </view>
+    <view class="auth-arrow">{{reconnecting ? '…' : '→'}}</view>
+  </view>
+
+  <view class="bundle-card" bindtap="goBundle">
+    <view class="bundle-row-top">
+      <view class="bundle-tag">EARLY BIRD · LIFETIME</view>
+      <view class="bundle-arrow">›</view>
+    </view>
+    <view class="bundle-title serif">早鸟终身全集</view>
+    <view class="bundle-meta">
+      <text class="bundle-price">19.9</text>
+      <text class="bundle-currency"> USDT</text>
+      <text class="bundle-strike">单本累加 39.6</text>
+    </view>
+    <view class="bundle-foot dim">现在 + 未来所有新书 · 一次解锁 · 终身可读</view>
+  </view>
+
+  <view class="section-head">
+    <view class="serif section-title">我的书架</view>
+    <view class="dim section-meta">{{books.length}} 本 · {{ownedSummary}}</view>
+  </view>
+
+  <view class="shelf">
+    <view
+      class="book-row"
+      wx:for="{{books}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goDetail"
+    >
+      <image
+        wx:if="{{item.cover}}"
+        class="book-thumb"
+        src="{{item.cover}}"
+        mode="aspectFill"
+      ></image>
+      <view wx:else class="book-spine" style="background:{{item.spine}}"></view>
+      <view class="book-body">
+        <view class="book-title-row">
+          <view class="book-title serif">{{item.title}}</view>
+          <view class="book-chevron dim">›</view>
+        </view>
+        <view class="book-en dim">{{item.titleEn}}</view>
+        <view class="book-meta">
+          <text class="muted">{{item.chapters}} 章</text>
+          <text class="dot">·</text>
+          <view wx:if="{{item.price === 0}}" class="tag-pill tag-free">免费</view>
+          <view wx:elif="{{item.ownedView}}" class="tag-pill tag-owned">已解锁</view>
+          <view wx:else class="tag-pill tag-locked">{{item.price}} USDT</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer-note dim">
+    BNB Chain · USDT 支付 · Powered by Luffa SuperBox
+  </view>
+</view>

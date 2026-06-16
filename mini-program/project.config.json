@@ -1,0 +1,46 @@
+{
+	"compileType": "miniprogram",
+	"TCMPPappid": "mpwrobabmms587ke",
+	"projectname": "TreeBookHouse",
+	"libVersion": "1.5.0",
+	"setting": {
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"uglifyFileName": true,
+		"urlCheck": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"uploadWithSourceMap": true,
+		"remoteDebugLogEnable": true,
+		"prefetch": false
+	},
+	"mockConfig": {
+		"globalOpen": false,
+		"rules": []
+	},
+	"LuffaToolsappid": "mpwrobabmms587ke",
+	"scripts": {},
+	"condition": {
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "default",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "bundle",
+					"pathName": "pages/bundle/bundle",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

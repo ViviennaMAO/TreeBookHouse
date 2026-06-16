@@ -1,0 +1,75 @@
+<view class="page" wx:if="{{book}}">
+
+  <view class="cover-wrap">
+    <image
+      wx:if="{{book.cover}}"
+      class="cover-img"
+      src="{{book.cover}}"
+      mode="aspectFill"
+    ></image>
+    <view wx:else class="cover" style="background:{{book.spine}}">
+      <view class="cover-en">{{book.titleEn}}</view>
+      <view class="cover-title serif">{{book.title}}</view>
+      <view class="cover-foot">TreeBookHouse · 互动书</view>
+    </view>
+  </view>
+
+  <view class="info">
+    <view class="info-title serif">{{book.title}}</view>
+    <view class="info-en muted">{{book.titleEn}}</view>
+
+    <view class="info-meta">
+      <view class="meta-cell">
+        <view class="meta-num serif">{{book.chapters}}</view>
+        <view class="meta-label dim">章节</view>
+      </view>
+      <view class="meta-divider"></view>
+      <view class="meta-cell">
+        <view class="meta-num serif" wx:if="{{book.price === 0}}">免费</view>
+        <view class="meta-num serif" wx:else>{{book.price}}</view>
+        <view class="meta-label dim" wx:if="{{book.price === 0}}">开放</view>
+        <view class="meta-label dim" wx:else>USDT</view>
+      </view>
+      <view class="meta-divider"></view>
+      <view class="meta-cell">
+        <view class="meta-num serif">互动</view>
+        <view class="meta-label dim">边学边练</view>
+      </view>
+    </view>
+
+    <view class="info-desc">{{book.desc}}</view>
+
+    <view wx:if="{{book.pitch}}" class="info-pitch dim">{{book.pitch}}</view>
+  </view>
+
+  <view class="cta-stack">
+    <block wx:if="{{canOpen}}">
+      <button class="btn-ink" bindtap="openBook" loading="{{opening}}">
+        {{book.price === 0 ? '开始阅读' : '继续阅读'}} →
+      </button>
+      <view wx:if="{{book.price > 0}}" class="cta-foot dim">已通过早鸟套餐 / 单本解锁</view>
+    </block>
+
+    <block wx:else>
+      <button class="btn-ink" bindtap="purchaseBook" loading="{{purchasing}}">
+        立刻解锁 · {{book.price}} USDT →
+      </button>
+      <view class="cta-or dim">— 或 —</view>
+      <button class="btn-ghost" bindtap="goBundle">查看 19.9 USDT 终身全集</button>
+    </block>
+  </view>
+
+  <view wx:if="{{error}}" class="error-box">
+    <view class="error-title">出错了</view>
+    <view class="error-msg mono">{{error}}</view>
+  </view>
+
+  <view wx:if="{{lastTx}}" class="tx-box">
+    <view class="tx-title">解锁成功</view>
+    <view class="tx-hash mono dim">{{lastTx}}</view>
+  </view>
+
+  <view class="footer-note dim">
+    支付以 BNB Chain USDT 进行 · 收款地址在产品详情页公示
+  </view>
+</view>

@@ -1,0 +1,121 @@
+<view class="page">
+
+  <view class="profile-head">
+    <view class="serif profile-title">我的</view>
+    <view class="profile-sub muted">钱包 · 书目 · 订单</view>
+  </view>
+
+  <view class="wallet-card">
+    <block wx:if="{{address}}">
+      <view class="wallet-row-top">
+        <view class="wallet-label dim">已连接钱包</view>
+        <view wx:if="{{bundleOn}}" class="tag-pill tag-bundle">终身套餐</view>
+      </view>
+      <view class="identity-row">
+        <image wx:if="{{avatar}}" class="identity-avatar" src="{{avatar}}" mode="aspectFill"></image>
+        <view wx:else class="identity-avatar identity-avatar-fallback">
+          <text class="serif">{{nickname ? nickname.charAt(0) : '·'}}</text>
+        </view>
+        <view class="identity-text">
+          <view wx:if="{{nickname}}" class="identity-name serif">{{nickname}}</view>
+          <view class="wallet-addr mono">{{addressShort}}</view>
+        </view>
+      </view>
+      <view class="wallet-stats">
+        <view class="stat-cell">
+          <view class="stat-num serif">{{ownedNum}}</view>
+          <view class="stat-label dim">已解锁</view>
+        </view>
+        <view class="stat-divider"></view>
+        <view class="stat-cell">
+          <view class="stat-num serif">{{totalNum}}</view>
+          <view class="stat-label dim">书目总数</view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="wallet-label dim">尚未连接</view>
+      <view class="wallet-tip">连接 Luffa 钱包以查看你的解锁记录</view>
+      <button class="btn-ink" bindtap="connect" loading="{{connecting}}">
+        连接 Luffa 钱包 →
+      </button>
+    </block>
+  </view>
+
+  <view wx:if="{{!bundleOn}}" class="bundle-prompt" bindtap="goBundle">
+    <view class="bundle-prompt-text">
+      <view class="prompt-title serif">还没解锁终身套餐?</view>
+      <view class="prompt-desc dim">19.9 USDT · 早鸟 · 现在 + 未来全部书</view>
+    </view>
+    <view class="prompt-arrow dim">›</view>
+  </view>
+
+  <view class="section-head">
+    <view class="serif section-title">书目状态</view>
+  </view>
+  <view class="my-shelf">
+    <view
+      class="my-row"
+      wx:for="{{shelf}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goDetail"
+    >
+      <view class="my-spine" style="background:{{item.spine}}"></view>
+      <view class="my-body">
+        <view class="my-title-row">
+          <view class="my-title serif">{{item.title}}</view>
+          <view wx:if="{{item.statusTag === 'free'}}" class="tag-pill tag-free">免费</view>
+          <view wx:elif="{{item.statusTag === 'owned'}}" class="tag-pill tag-owned">已解锁</view>
+          <view wx:elif="{{item.statusTag === 'bundle'}}" class="tag-pill tag-bundle">套餐</view>
+          <view wx:else class="tag-pill tag-locked">未解锁</view>
+        </view>
+        <view class="my-meta dim">{{item.chapters}} 章 · {{item.titleEn}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{history.length}}" class="section-head">
+    <view class="serif section-title">订单记录</view>
+  </view>
+  <view wx:if="{{history.length}}" class="history">
+    <view class="hist-row" wx:for="{{history}}" wx:key="at">
+      <view class="hist-top">
+        <view class="hist-type">
+          {{item.type === 'bundle' ? '终身套餐' : item.bookTitle}}
+        </view>
+        <view class="hist-amount serif">{{item.amount}} USDT</view>
+      </view>
+      <view class="hist-bot">
+        <text class="dim mono">{{item.hashShort}}</text>
+        <text class="dim">{{item.timeText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-head">
+    <view class="serif section-title">关于</view>
+  </view>
+  <view class="about">
+    <view class="about-row">
+      <view class="dim">作者</view>
+      <view>ViviennaMAO · 互动金融书房</view>
+    </view>
+    <view class="about-row">
+      <view class="dim">支付链</view>
+      <view>BNB Chain · USDT (BEP20)</view>
+    </view>
+    <view class="about-row" bindtap="copyReceiver">
+      <view class="dim">收款地址</view>
+      <view class="mono receiver-mono">{{receiverShort}}</view>
+    </view>
+    <view class="about-row" bindtap="contactAuthor">
+      <view class="dim">联系作者</view>
+      <view class="link-arrow">在 Luffa 中打开 ›</view>
+    </view>
+  </view>
+
+  <view class="footer-note dim">
+    TreeBookHouse · v0.1 · Powered by Luffa SuperBox
+  </view>
+</view>

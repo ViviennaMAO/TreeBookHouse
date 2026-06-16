@@ -1,0 +1,199 @@
+.ribbon {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0 40rpx;
+  gap: 24rpx;
+}
+.ribbon-tag {
+  font-size: 20rpx;
+  letter-spacing: 4rpx;
+  color: #0F1B3B;
+  font-weight: 600;
+}
+.ribbon-line {
+  flex: 1;
+  height: 1rpx;
+  background: #0F1B3B;
+}
+
+.hero-title {
+  font-size: 72rpx;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 12rpx;
+}
+.hero-sub {
+  font-size: 24rpx;
+  letter-spacing: 4rpx;
+  text-transform: uppercase;
+  margin-bottom: 50rpx;
+}
+
+.price-card {
+  padding: 40rpx 0 36rpx;
+  border-top: 1rpx solid #F1F2F4;
+  border-bottom: 1rpx solid #F1F2F4;
+  margin-bottom: 60rpx;
+}
+.price-main {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 14rpx;
+}
+.price-num {
+  font-size: 140rpx;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 2rpx;
+}
+.price-unit {
+  font-size: 36rpx;
+  margin-left: 16rpx;
+  color: #0F1B3B;
+}
+.price-strike {
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
+}
+.strike {
+  text-decoration: line-through;
+}
+
+/* Benefits */
+.benefit-list {
+  margin-bottom: 60rpx;
+}
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid #F1F2F4;
+}
+.benefit:last-child { border-bottom: none; }
+.check {
+  font-size: 36rpx;
+  color: #0F1B3B;
+  margin-right: 24rpx;
+  margin-top: 2rpx;
+  font-weight: 600;
+  width: 40rpx;
+  flex-shrink: 0;
+}
+.benefit-text { flex: 1; }
+.benefit-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 6rpx;
+  color: #0F1B3B;
+}
+.benefit-desc {
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
+  line-height: 1.6;
+}
+
+/* VS line */
+.vs-line {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  background: #F9FAFB;
+  border-radius: 24rpx;
+  margin-bottom: 16rpx;
+}
+.vs-cell { flex: 1; text-align: center; }
+.vs-label {
+  font-size: 20rpx;
+  letter-spacing: 2rpx;
+  margin-bottom: 8rpx;
+}
+.vs-val {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.vs-val.accent { color: #0F1B3B; }
+.vs-arrow {
+  font-size: 36rpx;
+  padding: 0 20rpx;
+}
+.save-tag {
+  text-align: center;
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+  color: #047857;
+  margin-bottom: 60rpx;
+}
+
+/* Owned */
+.owned-card {
+  background: #F0FDF4;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.owned-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #047857;
+  margin-bottom: 12rpx;
+}
+.owned-desc {
+  font-size: 22rpx;
+  margin-bottom: 30rpx;
+}
+.owned-card button { margin-top: 8rpx; }
+
+/* CTA */
+.cta-stack {
+  margin-bottom: 30rpx;
+}
+.cta-hint {
+  text-align: center;
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
+  margin-top: 20rpx;
+}
+
+.error-box {
+  background: #FEF2F2;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-top: 20rpx;
+}
+.error-title { color: #B91C1C; font-weight: 600; margin-bottom: 8rpx; }
+.error-msg { font-size: 22rpx; color: #7F1D1D; }
+
+.tx-box {
+  background: #F0FDF4;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-top: 20rpx;
+}
+.tx-title { color: #047857; font-weight: 600; margin-bottom: 8rpx; }
+.tx-hash { font-size: 20rpx; }
+
+.disclosure {
+  margin-top: 40rpx;
+}
+.disclosure-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.disclosure-row {
+  font-size: 22rpx;
+  line-height: 2;
+  letter-spacing: 1rpx;
+}
+.receiver {
+  font-size: 20rpx;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 20rpx;
+  letter-spacing: 1rpx;
+  margin-top: 60rpx;
+  padding-bottom: 40rpx;
+}

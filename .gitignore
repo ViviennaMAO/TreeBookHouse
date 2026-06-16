@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Luffa IDE 构建产物 (运行时由 IDE "构建 npm" 重新生成)
+miniprogram_npm/
+**/miniprogram_npm/
+
+# IDE / 编辑器
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# 本地 Claude Code 配置
+.claude/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 临时文件
+*.tmp
+*.bak

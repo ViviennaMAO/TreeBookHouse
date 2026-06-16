@@ -1,0 +1,72 @@
+page {
+  background: #FFFFFF;
+  font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Songti SC", "Microsoft YaHei", sans-serif;
+  color: #0F1B3B;
+  font-size: 28rpx;
+  line-height: 1.55;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 40rpx 40rpx 80rpx;
+  box-sizing: border-box;
+  background: #FFFFFF;
+}
+
+.serif {
+  font-family: "Songti SC", "STSong", "Source Han Serif SC", Georgia, "Times New Roman", serif;
+  letter-spacing: 0.5rpx;
+}
+
+.muted { color: #6B7280; }
+.dim   { color: #9CA3AF; }
+.ink   { color: #0F1B3B; }
+.mono  { font-family: ui-monospace, "SF Mono", Menlo, monospace; word-break: break-all; }
+
+.hairline {
+  height: 1rpx;
+  background: #E5E7EB;
+  width: 100%;
+}
+
+.btn-ink {
+  background: #0F1B3B;
+  color: #FFFFFF;
+  border-radius: 999rpx;
+  padding: 22rpx 24rpx;
+  font-size: 26rpx;
+  text-align: center;
+  letter-spacing: 1rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-ink[disabled] { background: #9CA3AF; color: #fff; }
+
+.btn-ghost {
+  background: transparent;
+  color: #0F1B3B;
+  border: 1rpx solid #0F1B3B;
+  border-radius: 999rpx;
+  padding: 20rpx 24rpx;
+  font-size: 24rpx;
+  text-align: center;
+  letter-spacing: 1rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 8rpx 20rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
+}
+.tag-free   { background: #ECFDF5; color: #047857; }
+.tag-owned  { background: #EEF2FF; color: #4338CA; }
+.tag-locked { background: #F3F4F6; color: #6B7280; }
+.tag-bundle { background: #0F1B3B; color: #FFFFFF; }
+
+button::after { border: none; }
