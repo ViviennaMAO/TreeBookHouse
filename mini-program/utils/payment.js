@@ -2,6 +2,8 @@
 // 同时提供"直接走原生 wx.invokeNativePlugin"的回落路径。
 // 这样即使 SDK 在某些 Luffa 基础库下加载失败,付款仍然能通过原生桥送签发交易。
 
+import { walletAddressFromResponse } from './luffa';
+
 const BSC_MAINNET = 56;
 const USDT_BSC = '0x55d398326f99059fF775485246999027B3197955';
 const RECEIVER = '0xc05ffc6067198d9bbc30ecf91356ffc4e0e12a53';
@@ -103,7 +105,7 @@ function nativeConnect() {
           desc: '需要你的 Luffa 钱包授权以完成 USDT 支付'
         }
       },
-      success: (res) => resolve((res && (res.address || res.account)) || null),
+      success: (res) => resolve(walletAddressFromResponse(res)),
       fail: () => resolve(null)
     });
   });

@@ -35,5 +35,12 @@
   "networkTimeout": {
     "request": 10000
   },
+  "navigateToMiniProgramAppIdList": [
+    "mpqj6lz8sg9ovagh",
+    "mpkboyj2fc3l4u7q",
+    "mp8l3nracsix91cs",
+    "mpaju0v8qb5z1h2m",
+    "mpvr44zosv8bkocl"
+  ],
   "permission": {}
 }

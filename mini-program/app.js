@@ -3,6 +3,7 @@
 // 把 onLaunch 后续代码(包括 connect)整个中断,直接导致弹窗不出。
 // 软登录只用原生 wx.invokeNativePlugin,纯净路径,不依赖任何 npm 包。
 import { loadOwnership, saveOwnership } from './utils/ownership';
+import { walletUserFromResponse } from './utils/luffa';
 
 const WALLET_CACHE_KEY = 'tbh_wallet_cache';
 
@@ -74,15 +75,16 @@ App({
         }
       },
       success: (res) => {
-        console.log('[TBH] connect success:', res && (res.address || res.account));
-        const addr = (res && (res.address || res.account)) || null;
+        const user = walletUserFromResponse(res);
+        const addr = (user && (user.address || user.account)) || null;
+        console.log('[TBH] connect success:', addr || JSON.stringify(res));
         if (addr) {
           const wallet = {
             address: addr,
-            nickname: (res && res.nickname) || '',
-            avatar: (res && res.avatar) || '',
-            uid: (res && res.uid) || '',
-            cid: (res && res.cid) || ''
+            nickname: (user && user.nickname) || '',
+            avatar: (user && user.avatar) || '',
+            uid: (user && user.uid) || '',
+            cid: (user && user.cid) || ''
           };
           this.globalData.wallet = wallet;
           try { wx.setStorageSync(WALLET_CACHE_KEY, JSON.stringify(wallet)); } catch (e) {}
